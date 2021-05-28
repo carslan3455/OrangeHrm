@@ -1,0 +1,16 @@
+Adress:
+------------------------------------
+https://opensource-demo.orangehrmlive.com
+
+USER STORY
+-------------------------------------
+As an Admin
+I want to perform users registration processes
+so that I can control the users accounts
+
+Tasks
+-------------------------------------
+1.    Write acceptance criteria
+2.    Write Test cases
+3.    Automate Test cases by using Cucumber
+4.    Generate a result report
