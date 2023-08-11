@@ -1,5 +1,6 @@
 Feature: Login functionality
 
+  @Login
   Scenario: Login
 
     Given User on home page

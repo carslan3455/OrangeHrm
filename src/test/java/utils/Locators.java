@@ -8,10 +8,12 @@ public interface Locators {
 
     //Login
 
-    By usernameLogin = By.cssSelector("input#txtUsername");
-    By passwordLogin = By.cssSelector("input#txtPassword");
-    By submitLogin = By.cssSelector("input#btnLogin");
-    By welcome = By.cssSelector("a#welcome");
+    By usernameLogin = By.cssSelector("input[name=username]");
+    By passwordLogin = By.cssSelector("input[name=password]");
+    By submitLogin = By.cssSelector("button[type=submit]");
+//    By welcome = By.cssSelector("a#welcome");
+    String welcomeUrl = "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index";
+
 
 
     // mainMenu

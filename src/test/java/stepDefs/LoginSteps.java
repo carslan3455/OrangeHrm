@@ -2,6 +2,7 @@ package stepDefs;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.WebDriverRunner;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -15,8 +16,8 @@ import utils.MyMethods;
 
 import java.util.List;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
+import static org.testng.AssertJUnit.assertEquals;
 
 public class LoginSteps extends MyMethods implements Locators {
 
@@ -38,12 +39,17 @@ public class LoginSteps extends MyMethods implements Locators {
     @Then("Login should be successfull")
     public void loginShouldBeSuccessfull() {
 
-        $(welcome).shouldBe(Condition.appear);
+//        $(welcome).shouldBe(Condition.appear);
+        String successUrl = WebDriverRunner.getWebDriver().getCurrentUrl();
+        assertEquals(welcomeUrl,successUrl);
+
 
     }
 
     @And("User navigate to Users Menu")
     public void userNavigateToUsersMenu() {
+
+        back();
 
         // todo 1. Yöntem bu sekilde tek tek yazilabilir
 //        Configuration.holdBrowserOpen = true;   // test bitince browser kapatmasin görelim diye
@@ -64,7 +70,7 @@ public class LoginSteps extends MyMethods implements Locators {
 
         // todo 4. Yöntem bu sekilde tek tek yazilabilir. ---ENUM---
 
-        navigateOnMenuTo(MenuLinks.Users);
+//        navigateOnMenuTo(MenuLinks.Users);
 //        navigateOnMenuTo1(MenuLinks.Users.getLinks());
 //          navigateOnMenuTo(MenuLinks.Apply);
 
